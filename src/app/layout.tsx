@@ -25,20 +25,19 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Studio Bros Fitness | Personal Trainer & Studio Boutique em Campo Grande/MS',
+    default: 'Studio Bros Fitness | Treinamento Personalizado no Carandá Bosque',
     template: '%s | Studio Bros Fitness',
   },
   description:
-    'Treinamento personalizado exclusivo com hora marcada no Carandá Bosque. Sem lotação, com avaliação fisiológica por especialista e acompanhamento contínuo. Credenciado Unisaúde MS.',
+    'Treinamento personalizado com hora marcada na Rua Vitório Zeolla, 891 - Carandá Bosque, Campo Grande/MS. Acompanhamento de perto por personal trainers e credenciado Unisaúde MS.',
   keywords: [
     'personal trainer campo grande ms',
     'studio bros fitness',
     'academia caranda bosque',
     'treino personalizado campo grande',
-    'unisaude ms academia',
+    'unisaude ms studio bros',
     'elton lidio personal trainer',
-    'musculacao boutique campo grande',
-    'avaliacao fisica fisiologia exercicio',
+    'avaliacao fisica campo grande',
   ],
   authors: [{ name: 'Studio Bros Fitness' }, { name: 'Elton Lidio' }],
   creator: 'Studio Bros Fitness',
@@ -63,28 +62,28 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Studio Bros Fitness | Personal Trainer no Carandá Bosque - Campo Grande/MS',
+    title: 'Studio Bros Fitness | Treinamento Personalizado no Carandá Bosque',
     description:
-      'Constância é luxo. Treinamento personalizado com hora marcada, avaliação fisiológica minuciosa e estrutura boutique privativa. Credenciado Unisaúde MS.',
+      'Treinamento com acompanhamento profissional próximo e hora marcada no Carandá Bosque, Campo Grande/MS. Credenciado Unisaúde MS.',
     url: 'https://joaowehner.github.io/StudioBrosFitness/',
     siteName: 'Studio Bros Fitness',
     locale: 'pt_BR',
     type: 'website',
     images: [
       {
-        url: 'https://joaowehner.github.io/StudioBrosFitness/assets/images/bros_img_7.jpg',
+        url: 'https://joaowehner.github.io/StudioBrosFitness/assets/images/bros_img_15.jpg',
         width: 1200,
         height: 630,
-        alt: 'Equipe de Treinadores do Studio Bros Fitness no Carandá Bosque',
+        alt: 'Área de Musculação e Pesos Livres do Studio Bros Fitness',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Studio Bros Fitness | Personal Trainer no Carandá Bosque',
+    title: 'Studio Bros Fitness | Treinamento Personalizado no Carandá Bosque',
     description:
-      'Studio boutique de treinamento personalizado. Estrutura sem lotação, fisiologia do exercício e credenciado Unisaúde MS.',
-    images: ['https://joaowehner.github.io/StudioBrosFitness/assets/images/bros_img_7.jpg'],
+      'Acompanhamento profissional próximo e hora marcada no Carandá Bosque. Credenciado Unisaúde MS.',
+    images: ['https://joaowehner.github.io/StudioBrosFitness/assets/images/bros_img_15.jpg'],
   },
   robots: {
     index: true,
@@ -114,18 +113,17 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': ['ExerciseGym', 'HealthClub', 'LocalBusiness'],
     name: STUDIO_DATA.brandName,
-    alternateName: 'Bros Fitness Carandá Bosque',
+    alternateName: 'Studio Bros Fitness Carandá Bosque',
     legalName: STUDIO_DATA.legal.companyName,
     taxID: STUDIO_DATA.legal.cnpj,
-    url: 'https://brosfitness.com.br',
+    url: 'https://joaowehner.github.io/StudioBrosFitness/',
     telephone: '+55-67-3253-2353',
-    priceRange: '$$$',
     address: {
       '@type': 'PostalAddress',
       streetAddress: `${STUDIO_DATA.address.street}, ${STUDIO_DATA.address.number}`,
       addressLocality: STUDIO_DATA.address.city,
       addressRegion: STUDIO_DATA.address.state,
-      postalCode: STUDIO_DATA.address.zip,
+      postalCode: STUDIO_DATA.address.postalCode,
       addressCountry: 'BR',
     },
     geo: {
@@ -140,22 +138,11 @@ export default function RootLayout({
         opens: '06:00',
         closes: '21:00',
       },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Saturday'],
-        opens: '07:00',
-        closes: '11:00',
-      },
     ],
-    founder: {
-      '@type': 'Person',
-      name: STUDIO_DATA.headCoach.name,
-      jobTitle: STUDIO_DATA.headCoach.title,
-    },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
-      reviewCount: '48',
+      bestRating: '5',
     },
     sameAs: [
       STUDIO_DATA.social.instagramUrl,
@@ -171,7 +158,7 @@ export default function RootLayout({
         />
         <link rel="icon" href={getAssetPath('/favicon.ico')} sizes="any" />
       </head>
-      <body className="font-sans bg-dark-950 text-dark-50 antialiased selection:bg-brand-teal/30 selection:text-white min-h-screen flex flex-col">
+      <body className="font-sans bg-[#080C0D] text-slate-100 antialiased selection:bg-teal-500/30 selection:text-white min-h-screen flex flex-col">
         {children}
       </body>
     </html>

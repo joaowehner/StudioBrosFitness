@@ -1,62 +1,58 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import Manifesto from '@/components/Manifesto';
-import Methodology from '@/components/Methodology';
+import AboutSection from '@/components/AboutSection';
 import Services from '@/components/Services';
 import GalleryStructure from '@/components/GalleryStructure';
 import TeamSection from '@/components/TeamSection';
+import SocialProofSection from '@/components/SocialProofSection';
 import UnisaudeSection from '@/components/UnisaudeSection';
-import Testimonials from '@/components/Testimonials';
-import GoalSimulator from '@/components/GoalSimulator';
 import LocationSection from '@/components/LocationSection';
 import FaqSection from '@/components/FaqSection';
+import FinalCtaSection from '@/components/FinalCtaSection';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-dark-950 text-dark-50 selection:bg-brand-teal/30 selection:text-white relative">
-      {/* Fixed Sticky Header */}
+    <main className="min-h-screen bg-[#080C0D] text-slate-100 selection:bg-teal-500/30 selection:text-white relative">
+      {/* 1. Header Fixo & Micro Status Bar */}
       <Header />
 
-      {/* Hero Section */}
+      {/* 2. Hero: Proposta Factual + CTA + Foto Real */}
       <Hero />
 
-      {/* Brand Manifesto & Anti-Gym Contrast */}
-      <Manifesto />
+      {/* 3. O Studio: Proposta e 3 Fatos Verificados */}
+      <AboutSection />
 
-      {/* Science & Physiology Pillar with Elton Lidio */}
-      <Methodology />
-
-      {/* Signature Modalities & Programs */}
+      {/* 4. Serviços: 3 Formatos Reais de Treinamento */}
       <Services />
 
-      {/* Bento Facility Gallery & Architecture */}
+      {/* 5. Estrutura: Galeria Visual com Legendas Reais */}
       <GalleryStructure />
 
-      {/* Team of Coaches */}
+      {/* 6. Equipe: Treinadores Reais e Fotos Autênticas */}
       <TeamSection />
 
-      {/* Accredited Health Partner: Unisaúde MS */}
+      {/* 7. Prova Social: Nota 5.0 Google e Reconhecimento Real */}
+      <SocialProofSection />
+
+      {/* 8. Convênio Unisaúde MS (Bloco Direto e Transparente) */}
       <UnisaudeSection />
 
-      {/* Real Testimonials & Social Proof */}
-      <Testimonials />
-
-      {/* Interactive Goal & Schedule Simulator */}
-      <GoalSimulator />
-
-      {/* Location, Facade, Opening Hours & Google Maps */}
+      {/* 9. Localização, Horários & Mapa Interativo */}
       <LocationSection />
 
-      {/* Frequent Questions (FAQ) */}
+      {/* 10. FAQ: 4 Perguntas Essenciais */}
       <FaqSection />
 
-      {/* Institutional Legal Footer */}
+      {/* 11. CTA Final com Convite ao WhatsApp */}
+      <FinalCtaSection />
+
+      {/* 12. Rodapé Institucional com Dados Legais Completos */}
       <Footer />
 
-      {/* Persistent Floating WhatsApp Channel */}
+      {/* 13. Atendimento Flutuante no WhatsApp */}
       <FloatingWhatsApp />
     </main>
   );
