@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     'elton lidio personal trainer',
     'avaliacao fisica campo grande',
   ],
-  authors: [{ name: 'Studio Bros Fitness' }, { name: 'Elton Lidio' }],
+  authors: [{ name: 'Studio Bros Fitness' }],
   creator: 'Studio Bros Fitness',
   publisher: 'Studio Bros Fitness',
   formatDetection: {
@@ -71,10 +71,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://joaowehner.github.io/StudioBrosFitness/assets/images/bros_img_15.jpg',
+        url: 'https://joaowehner.github.io/StudioBrosFitness/assets/images/og_image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Área de Musculação e Pesos Livres do Studio Bros Fitness',
+        alt: 'Studio Bros Fitness - Treinamento Personalizado no Carandá Bosque',
       },
     ],
   },
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     title: 'Studio Bros Fitness | Treinamento Personalizado no Carandá Bosque',
     description:
       'Acompanhamento profissional próximo e hora marcada no Carandá Bosque. Credenciado Unisaúde MS.',
-    images: ['https://joaowehner.github.io/StudioBrosFitness/assets/images/bros_img_15.jpg'],
+    images: ['https://joaowehner.github.io/StudioBrosFitness/assets/images/og_image.jpg'],
   },
   robots: {
     index: true,
@@ -139,11 +139,6 @@ export default function RootLayout({
         closes: '21:00',
       },
     ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      bestRating: '5',
-    },
     sameAs: [
       STUDIO_DATA.social.instagramUrl,
     ],

@@ -2,8 +2,19 @@ export interface Trainer {
   id: string;
   name: string;
   role: string;
+  cref?: string;
   instagram?: string;
   photo: string;
+  photoAlt?: string;
+}
+
+export interface GalleryItem {
+  id: string;
+  photo: string;
+  caption: string;
+  subtitle?: string;
+  alt: string;
+  featured?: boolean;
 }
 
 export interface ServiceItem {
@@ -80,24 +91,33 @@ export const STUDIO_DATA = {
     weekdays: 'Segunda a Sexta: 06h às 21h',
     saturday: 'Sábado: Sob consulta e agendamento',
     sunday: 'Domingo: Fechado',
-    policy: 'Atendimento com hora marcada para garantir acompanhamento próximo e ambiente sem superlotação.',
+    policy: 'Atendimento com hora marcada para proporcionar acompanhamento próximo e ambiente reservado com capacidade controlada.',
   },
 
   // Ratings
   ratingGoogle: {
     score: '5.0',
     source: 'Google Avaliações',
-    description: 'Nota máxima atribuída pelos alunos em Campo Grande/MS.',
+    description: 'Avaliação máxima atribuída por alunos em Campo Grande/MS.',
   },
 
-  // Confirmed Team Members (Only verified professionals and authentic photos)
+  // Confirmed Team Members & Collective Photo
+  teamCollective: {
+    photo: getAssetPath('/assets/images/bros_img_7.jpg'),
+    title: 'Equipe Studio Bros Fitness',
+    alt: 'Equipe de treinadores do Studio Bros Fitness reunida em frente ao painel verde oficial com logotipo da marca',
+    description: 'Treinadores dedicados ao acompanhamento técnico presencial dos alunos, com supervisão direta de movimento e atendimento com hora marcada.',
+  },
+
   trainers: [
     {
       id: 'elton',
       name: 'Prof. Elton Lidio',
-      role: 'Sócio & Prof. de Educação Física',
+      role: 'Sócio Fundador & Prof. de Educação Física',
+      cref: 'CREF 003889-G/MS',
       instagram: '@eltonpersonal10',
       photo: getAssetPath('/assets/images/bros_img_15.jpg'),
+      photoAlt: 'Prof. Elton Lidio em sua sala de avaliação física no Studio Bros Fitness',
     },
     {
       id: 'nicolly',
@@ -105,29 +125,15 @@ export const STUDIO_DATA = {
       role: 'Personal Trainer',
       instagram: '@nicolly_souza',
       photo: getAssetPath('/assets/images/curated/feed_2.jpg'),
+      photoAlt: 'Prof.ª Nicolly em acompanhamento de treino presencial no Studio Bros Fitness',
     },
-    {
-      id: 'matheus',
-      name: 'Prof. Matheus',
-      role: 'Personal Trainer',
-      instagram: '@matheusdornelesjj',
-      photo: getAssetPath('/assets/images/bros_img_7.jpg'),
-    },
-    {
-      id: 'augusto',
-      name: 'Prof. Augusto',
-      role: 'Personal Trainer',
-      instagram: '@augustochiella',
-      photo: getAssetPath('/assets/images/bros_img_7.jpg'),
-    },
-    {
-      id: 'alex',
-      name: 'Prof. Alex',
-      role: 'Personal Trainer',
-      instagram: '@alexdecastropersonaltrainer',
-      photo: getAssetPath('/assets/images/bros_img_7.jpg'),
-    },
-  ] as Trainer[],
+  ],
+
+  coachesList: [
+    { name: 'Prof. Matheus', instagram: '@matheusdornelesjj', role: 'Personal Trainer' },
+    { name: 'Prof. Augusto', instagram: '@augustochiella', role: 'Personal Trainer' },
+    { name: 'Prof. Alex', instagram: '@alexdecastropersonaltrainer', role: 'Personal Trainer' },
+  ],
 
   // Confirmed Services (Direct, honest, non-medicalized)
   services: [
@@ -137,7 +143,7 @@ export const STUDIO_DATA = {
       shortDesc: 'Acompanhamento presencial individual ou em pequenos grupos com hora marcada. Cada exercício é orientado de perto pelo treinador, com correção postural e ajuste contínuo de intensidade.',
       benefits: [
         'Supervisão direta em cada movimento',
-        'Horários agendados sem disputa por aparelhos',
+        'Horários agendados com capacidade controlada',
         'Planejamento individualizado para seu objetivo',
       ],
       ctaLabel: 'Consultar Horários de Personal',
@@ -146,10 +152,10 @@ export const STUDIO_DATA = {
     {
       id: 'avaliacao',
       title: 'Avaliação Física',
-      shortDesc: 'Análise minuciosa de composição corporal e testes de mobilidade funcional. Serve como base para planejar seus treinos com segurança e acompanhar sua evolução real.',
+      shortDesc: 'Mapeamento de composição corporal e análise de mobilidade. Parâmetros essenciais para direcionar seus treinos com segurança e acompanhar sua evolução real.',
       benefits: [
         'Mapeamento de composição corporal',
-        'Identificação de padrões de movimento e mobilidade',
+        'Análise de postura e mobilidade para direcionamento do treino',
         'Acompanhamento periódico de evolução',
       ],
       ctaLabel: 'Agendar Avaliação Física',
@@ -177,37 +183,39 @@ export const STUDIO_DATA = {
     whatsappMessage: 'Olá! Sou beneficiário Unisaúde MS e gostaria de consultar as condições de atendimento no Studio Bros Fitness.',
   },
 
-  // Gallery Highlights (Real photos with factual labels)
+  // Curated Gallery Highlights (100% authentic, verified facility & training photos)
   gallery: [
     {
+      id: 'fachada',
+      photo: getAssetPath('/assets/images/facade_night_clean.jpg'),
+      caption: 'Fachada Noturna & Totem Iluminado',
+      subtitle: 'Rua Vitório Zeolla, 891 - Carandá Bosque',
+      alt: 'Fachada iluminada do Studio Bros Fitness à noite com totem e entrada no Carandá Bosque',
+      featured: true,
+    },
+    {
+      id: 'treino',
+      photo: getAssetPath('/assets/images/curated/feed_2.jpg'),
+      caption: 'Treino Orientado com Personal',
+      subtitle: 'Supervisão presencial com pesos livres e anilhas',
+      alt: 'Acompanhamento presencial de treino com anilhas Rino Force no Studio Bros Fitness',
+      featured: false,
+    },
+    {
+      id: 'avaliacao',
       photo: getAssetPath('/assets/images/bros_img_15.jpg'),
-      caption: 'Área de musculação e pesos livres',
-      alt: 'Área de musculação com halteres e aparelhos no Studio Bros Fitness',
+      caption: 'Sala de Avaliação Física Privativa',
+      subtitle: 'Atendimento individual e planejamento técnico',
+      alt: 'Sala de avaliação física privativa com equipamentos e certificados no Studio Bros Fitness',
+      featured: false,
     },
     {
-      photo: getAssetPath('/assets/images/bros_img_122.jpg'),
-      caption: 'Ambiente climatizado e organizado',
-      alt: 'Salão de treinamento organizado no Carandá Bosque',
-    },
-    {
-      photo: getAssetPath('/assets/images/bros_img_48.jpg'),
-      caption: 'Aparelhos selecionados para treino orientado',
-      alt: 'Equipamentos de musculação do Studio Bros Fitness',
-    },
-    {
-      photo: getAssetPath('/assets/images/bros_img_77.jpg'),
-      caption: 'Espaço planejado para treinos com hora marcada',
-      alt: 'Estrutura privativa para treinamento personalizado',
-    },
-    {
-      photo: getAssetPath('/assets/images/bros_img_128.jpg'),
-      caption: 'Iluminação natural e ambiente acolhedor',
-      alt: 'Detalhe do espaço de treino com luz natural',
-    },
-    {
-      photo: getAssetPath('/assets/images/bros_img_68.jpg'),
-      caption: 'Estrutura de pesos e barras',
-      alt: 'Equipamentos e anilhas do Studio Bros',
+      id: 'aparelhos',
+      photo: getAssetPath('/assets/images/bros_img_75.jpg'),
+      caption: 'Aparelhos Articulados & Treino de Força',
+      subtitle: 'Puxadores, cabos e pesos selecionados',
+      alt: 'Área de treinamento com aparelhos de cabo e piso oficial BROS',
+      featured: false,
     },
   ],
 
@@ -215,7 +223,7 @@ export const STUDIO_DATA = {
   faqs: [
     {
       question: 'Como funciona o atendimento no Studio Bros Fitness?',
-      answer: 'Nosso atendimento é realizado com acompanhamento de personal trainer e agendamento prévio. Cada aluno treina com supervisão direta, orientações de postura e controle de carga em um ambiente reservado e sem superlotação.',
+      answer: 'Nosso atendimento é realizado com acompanhamento de personal trainer e agendamento prévio. Cada aluno treina com supervisão direta, orientações de postura e controle de carga em um ambiente com capacidade controlada.',
     },
     {
       question: 'Preciso agendar para conhecer o estúdio?',

@@ -59,11 +59,11 @@ export const Hero: React.FC = () => {
             <div className="pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-300">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-teal-400 shrink-0" />
-                <span>Hora marcada sem filas</span>
+                <span>Capacidade controlada</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-teal-400 shrink-0" />
-                <span>Supervisão de personal</span>
+                <span>Acompanhamento presencial</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
@@ -73,34 +73,19 @@ export const Hero: React.FC = () => {
 
           </div>
 
-          {/* Real Photo Showcase */}
+          {/* Real Photo Showcase - Editorial & Clean without floating cards */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#0F1516] shadow-2xl shadow-black/80">
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#0F1516] shadow-2xl shadow-black/80 ring-1 ring-white/5">
               <div className="aspect-[4/5] relative">
                 <Image
-                  src={getAssetPath('/assets/images/bros_img_15.jpg')}
-                  alt="Área de musculação e pesos livres do Studio Bros Fitness"
+                  src={getAssetPath('/assets/images/bros_img_48.jpg')}
+                  alt="Treinamento focado e personalizado no Studio Bros Fitness"
                   fill
                   priority
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#080C0D] via-transparent to-transparent opacity-80" />
-                
-                {/* Floating Real Metric Card */}
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#0A0E10]/90 backdrop-blur-md border border-white/10">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-xs text-slate-400">Ambiente do Studio</p>
-                      <p className="text-sm font-semibold text-white">Rua Vitório Zeolla, 891</p>
-                    </div>
-                    <div className="text-right">
-                      <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                        Atendimento com hora marcada
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080C0D]/80 via-transparent to-black/20 pointer-events-none" />
               </div>
             </div>
           </div>

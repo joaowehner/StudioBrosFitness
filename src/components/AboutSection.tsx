@@ -11,10 +11,10 @@ export const AboutSection: React.FC = () => {
             Sobre o Studio
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight leading-snug">
-            Uma proposta focada em treino bem orientado e respeito ao seu tempo.
+            Treinamento personalizado com hora marcada e atenção profissional.
           </h2>
           <p className="mt-4 text-slate-300 text-base sm:text-lg leading-relaxed">
-            O Studio Bros Fitness nasceu para oferecer uma alternativa prática ao ambiente de academias convencionais. Com horários agendados e atenção de personal trainers em cada sessão, nosso foco é garantir que você execute cada exercício com segurança e constância, em um espaço organizado e acolhedor.
+            O Studio Bros Fitness oferece acompanhamento presencial dedicado de personal trainers em cada sessão. O foco é proporcionar supervisão técnica contínua, orientação postural e constância nos treinos, em um ambiente reservado e organizado no Carandá Bosque.
           </p>
         </div>
 
@@ -28,7 +28,7 @@ export const AboutSection: React.FC = () => {
               Acompanhamento Profissional
             </h3>
             <p className="text-sm text-slate-300 leading-relaxed">
-              Treinador presente e orientando seus movimentos do início ao fim, ajustando cargas e garantindo a técnica correta.
+              Treinador presente orientando seus movimentos do início ao fim, ajustando cargas e supervisionando a execução técnica.
             </p>
           </div>
 
@@ -40,7 +40,7 @@ export const AboutSection: React.FC = () => {
               Sessões com Hora Marcada
             </h3>
             <p className="text-sm text-slate-300 leading-relaxed">
-              Atendimento com capacidade controlada. Você chega, treina os exercícios planejados sem disputar aparelhos e cumpre sua rotina no prazo.
+              Atendimento com capacidade controlada. Você chega no seu horário agendado, treina com tranquilidade e cumpre sua rotina com previsibilidade.
             </p>
           </div>
 

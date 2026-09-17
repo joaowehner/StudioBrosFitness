@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
               <BrosLogo size="md" />
             </Link>
             <p className="text-slate-300 text-xs leading-relaxed max-w-sm">
-              Treinamento personalizado com hora marcada no Carandá Bosque. Orientação profissional atenta, ambiente reservado e sem superlotação.
+              Treinamento personalizado com hora marcada no Carandá Bosque. Orientação profissional atenta, ambiente reservado e com capacidade controlada.
             </p>
             <div className="pt-1">
               <a
