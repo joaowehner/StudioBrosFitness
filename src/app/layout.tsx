@@ -52,6 +52,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: './',
   },
+  icons: {
+    icon: [
+      { url: getAssetPath('/favicon.svg'), type: 'image/svg+xml' },
+      { url: getAssetPath('/favicon.png'), sizes: '32x32', type: 'image/png' },
+      { url: getAssetPath('/favicon.ico'), sizes: 'any' },
+    ],
+    apple: [
+      { url: getAssetPath('/apple-touch-icon.png'), sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
     title: 'Studio Bros Fitness | Personal Trainer no Carandá Bosque - Campo Grande/MS',
     description:
