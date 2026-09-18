@@ -1,24 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import { STUDIO_DATA } from '@/data/studioData';
-import { MapPin, Dumbbell, Stethoscope, Sparkles } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 export const GalleryStructure: React.FC = () => {
   const featuredItem = STUDIO_DATA.gallery.find((item) => item.featured) || STUDIO_DATA.gallery[0];
   const detailItems = STUDIO_DATA.gallery.filter((item) => !item.featured);
-
-  const getIcon = (id: string) => {
-    switch (id) {
-      case 'fachada':
-        return <MapPin className="w-4 h-4 text-teal-400" />;
-      case 'treino':
-        return <Dumbbell className="w-4 h-4 text-teal-400" />;
-      case 'avaliacao':
-        return <Stethoscope className="w-4 h-4 text-teal-400" />;
-      default:
-        return <Sparkles className="w-4 h-4 text-teal-400" />;
-    }
-  };
 
   return (
     <section id="estrutura" className="py-16 md:py-24 bg-[#0A0F11] border-t border-white/5">
@@ -94,17 +81,11 @@ export const GalleryStructure: React.FC = () => {
                 </div>
 
                 {/* Text Content */}
-                <div className="space-y-1 flex-1 min-w-0">
-                  <div className="flex items-center gap-1.5 mb-1">
-                    {getIcon(item.id)}
-                    <span className="text-[11px] font-semibold text-teal-400 uppercase tracking-wider">
-                      Espaço Real
-                    </span>
-                  </div>
-                  <h4 className="text-sm sm:text-base font-bold text-white tracking-tight leading-snug truncate">
+                <div className="space-y-1.5 flex-1 min-w-0">
+                  <h4 className="text-sm sm:text-base font-bold text-white tracking-tight leading-snug">
                     {item.caption}
                   </h4>
-                  <p className="text-xs text-slate-300 leading-relaxed line-clamp-2">
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
                     {item.subtitle}
                   </p>
                 </div>
